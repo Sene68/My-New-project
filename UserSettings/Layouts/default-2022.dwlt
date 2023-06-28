@@ -877,6 +877,19 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
@@ -888,9 +901,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.439637, y: -0.32788694, z: -0.17284337}
+    m_Target: {x: -229.44443, y: -38.43586, z: -1.8600397}
     speed: 2
-    m_Value: {x: -11.439637, y: -0.32788694, z: -0.17284337}
+    m_Value: {x: -229.44443, y: -38.43586, z: -1.8600397}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -940,9 +953,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 24.398136
+    m_Target: 193.1178
     speed: 2
-    m_Value: 24.398136
+    m_Value: 193.1178
   m_Ortho:
     m_Target: 1
     speed: 2

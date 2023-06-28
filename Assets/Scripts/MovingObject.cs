@@ -10,6 +10,7 @@ public class MovingObject : MonoBehaviour
 
     public float runSpeed;
     private float applyRunSpeed;
+    private bool applyRunFlag = false;
 
     public int walkCount;
     private int currentWalkCount;
@@ -25,8 +26,10 @@ public class MovingObject : MonoBehaviour
     IEnumerator MoveCoroutine() {
         if (Input.GetKey(KeyCode.LeftShift)) {
             applyRunSpeed = runSpeed;
+            applyRunFlag = true;
         } else {
             applyRunSpeed = 0;
+            applyRunFlag = false;
         }
 
         vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
@@ -37,6 +40,10 @@ public class MovingObject : MonoBehaviour
                 transform.Translate(vector.x * (speed + applyRunSpeed), 0, 0);
             } else if(vector.y != 0) {
                 transform.Translate(0, vector.y * (speed + applyRunSpeed), 0);
+            }
+
+            if (applyRunFlag) {
+                currentWalkCount++;
             }
 
             currentWalkCount++;
