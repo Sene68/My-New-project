@@ -17,10 +17,12 @@ public class MovingObject : MonoBehaviour
 
     private bool canMove = true;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     IEnumerator MoveCoroutine() {
@@ -33,6 +35,10 @@ public class MovingObject : MonoBehaviour
         }
 
         vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
+
+        animator.SetFloat("DirX", vector.x);
+        animator.SetFloat("DirY", vector.y);
+        animator.SetBool("Walking", true);
 
         while(currentWalkCount < walkCount) {
 
@@ -50,6 +56,8 @@ public class MovingObject : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         currentWalkCount = 0;
+
+        animator.SetBool("Walking", false);
         canMove = true;
     }
 
