@@ -37,6 +37,11 @@ public class MovingObject : MonoBehaviour
 
             vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
 
+            if (vector.x != 0) {
+                vector.y = 0;
+            }
+                
+
             animator.SetFloat("DirX", vector.x);
             animator.SetFloat("DirY", vector.y);
             animator.SetBool("Walking", true);
